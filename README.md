@@ -75,8 +75,12 @@ bun install          # or: npm install / pnpm install / yarn install
 Per-component reference, organized by category (mirrors `app/components/atoms/<category>/`):
 
 - **atoms / (display)** — [Alert](./doc/atoms/(display)/Alert.md), [Avatar](./doc/atoms/(display)/Avatar.md), [AvatarGroup](./doc/atoms/(display)/AvatarGroup.md), [Badge](./doc/atoms/(display)/Badge.md)
-- **atoms / (control)** — [Button](./doc/atoms/(control)/Button.md), [Progress](./doc/atoms/(control)/Progress.md), [Switch](./doc/atoms/(control)/Switch.md)
+- **atoms / (control)** — [Button](./doc/atoms/(control)/Button.md), [Progress](./doc/atoms/(control)/Progress.md), [Switch](./doc/atoms/(control)/Switch.md), [Radio](./doc/atoms/(control)/Radio.md), [RadioGroup](./doc/atoms/(control)/RadioGroup.md), [Checkbox](./doc/atoms/(control)/Checkbox.md), [CheckboxGroup](./doc/atoms/(control)/CheckboxGroup.md)
 - **atoms / (overlay)** — [Banner](./doc/atoms/(overlay)/Banner.md)
+- **atoms / (layout)** — [Stack](./doc/atoms/(layout)/Stack.md), [Separator](./doc/atoms/(layout)/Separator.md), [Accordion](./doc/atoms/(layout)/Accordion.md), [AccordionItem](./doc/atoms/(layout)/AccordionItem.md)
+- **atoms / (input)** — [Input](./doc/atoms/(input)/Input.md), [EmailInput](./doc/atoms/(input)/EmailInput.md), [PasswordInput](./doc/atoms/(input)/PasswordInput.md), [TelInput](./doc/atoms/(input)/TelInput.md)
+- **atoms / (typography)** — [Heading](./doc/atoms/(typography)/Heading.md), [Text](./doc/atoms/(typography)/Text.md), [Label](./doc/atoms/(typography)/Label.md), [Caption](./doc/atoms/(typography)/Caption.md), [Blockquote](./doc/atoms/(typography)/Blockquote.md)
+- **atoms / (navigation)** — [Anchor](./doc/atoms/(navigation)/Anchor.md), [Breadcrumb](./doc/atoms/(navigation)/Breadcrumb.md), [NavigationMenu](./doc/atoms/(navigation)/NavigationMenu.md), [Pagination](./doc/atoms/(navigation)/Pagination.md), [Tabs](./doc/atoms/(navigation)/Tabs.md)
 
 Full index and conventions: **[doc/README.md](./doc/README.md)**.
 
@@ -96,12 +100,12 @@ app/
     App.vue               token definitions ([data-theme])
     atoms/
       (display)/           Avatar, AvatarGroup, Badge
-      (control)/           Button, Progress
+      (control)/           Button, Progress, Switch, Radio, RadioGroup, Checkbox, CheckboxGroup
       (overlay)/           Alert, Banner
-      (layout)/            Stack
-      (control)/           Button, Progress
-      (overlay)/           Banner
-      (typography)/        (reserved)
+      (layout)/            Stack, Separator, Accordion, AccordionItem
+      (input)/             Input, EmailInput, PasswordInput, TelInput
+      (typography)/        Heading, Text, Label, Caption, Blockquote
+      (navigation)/        Anchor, Breadcrumb, NavigationMenu, Pagination, Tabs
 doc/                      per-component docs (see doc/README.md)
 nuxt.config.ts            components: [{ path: '~/components', pathPrefix: false }]
 ```
