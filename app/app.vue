@@ -186,6 +186,91 @@
                     <Switch :model-value="true" disabled variant="info" label="Disabled" />
                 </Stack>
             </section>
+
+            <section class="group">
+                <h2 class="group__title">Radio</h2>
+                <Stack direction="col" gap="sm" align="start">
+                    <Radio v-model="radio" value="a" name="plan" label="Option A" />
+                    <Radio v-model="radio" value="b" name="plan" label="Option B" variant="success" />
+                    <Radio v-model="radio" value="c" name="plan" label="Option C" variant="warning" />
+                    <Radio v-model="radio" value="d" name="plan" label="Disabled" disabled />
+                    <Radio v-model="radio" value="e" name="plan" size="lg" label="Large" />
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">RadioGroup</h2>
+                <RadioGroup
+                    v-model="radioGroup"
+                    name="tier"
+                    :options="[
+                        { value: 'x', label: 'Starter', variant: 'info' },
+                        { value: 'y', label: 'Pro', variant: 'success' },
+                        { value: 'z', label: 'Enterprise', variant: 'warning' },
+                        { value: 'w', label: 'Locked', disabled: true },
+                    ]"
+                />
+                <RadioGroup
+                    v-model="radioGroup"
+                    name="tier-row"
+                    direction="row"
+                    size="lg"
+                    :options="[
+                        { value: 'x', label: 'A' },
+                        { value: 'y', label: 'B' },
+                        { value: 'z', label: 'C' },
+                    ]"
+                />
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Separator</h2>
+                <Stack direction="col" gap="sm" align="stretch">
+                    <Separator label="Section" />
+                    <Separator variant="info" />
+                    <Separator variant="error" />
+                    <Stack direction="row" gap="sm" align="center">
+                        <span>Left</span>
+                        <Separator orientation="vertical" />
+                        <span>Right</span>
+                    </Stack>
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Checkbox</h2>
+                <Stack direction="col" gap="sm" align="start">
+                    <Checkbox v-model="checked" label="Checked" />
+                    <Checkbox :model-value="false" label="Unchecked" variant="success" />
+                    <Checkbox :model-value="true" indeterminate label="Indeterminate" variant="warning" />
+                    <Checkbox :model-value="true" disabled label="Disabled" />
+                    <Checkbox v-model="checked" size="lg" label="Large" variant="error" />
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">CheckboxGroup</h2>
+                <CheckboxGroup
+                    v-model="tags"
+                    name="tags"
+                    :options="[
+                        { value: 'a', label: 'Design', variant: 'info' },
+                        { value: 'b', label: 'Build', variant: 'success' },
+                        { value: 'c', label: 'Test', variant: 'warning' },
+                        { value: 'd', label: 'Locked', disabled: true },
+                    ]"
+                />
+                <CheckboxGroup
+                    v-model="tags"
+                    name="tags-row"
+                    direction="row"
+                    :options="[
+                        { value: 'a', label: 'X' },
+                        { value: 'b', label: 'Y' },
+                        { value: 'c', label: 'Z' },
+                    ]"
+                />
+            </section>
         </div>
         <div style="height: 50vh"></div>
     </App>
@@ -204,6 +289,11 @@ const switches = ref({
     sm: true,
     lg: true,
 });
+
+const radio = ref("a");
+const radioGroup = ref("x");
+const checked = ref(true);
+const tags = ref(["a", "c"]);
 </script>
 
 <style scoped lang="sass">

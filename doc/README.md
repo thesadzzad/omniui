@@ -14,6 +14,14 @@ Per-component documentation, mirroring `app/components/atoms/<category>/`.
 - [Button](./atoms/(control)/Button.md)
 - [Progress](./atoms/(control)/Progress.md)
 - [Switch](./atoms/(control)/Switch.md)
+- [Radio](./atoms/(control)/Radio.md)
+- [RadioGroup](./atoms/(control)/RadioGroup.md)
+- [Checkbox](./atoms/(control)/Checkbox.md)
+- [CheckboxGroup](./atoms/(control)/CheckboxGroup.md)
+
+### `(layout)`
+- [Stack](./atoms/(layout)/Stack.md)
+- [Separator](./atoms/(layout)/Separator.md)
 
 ### `(overlay)`
 - [Banner](./atoms/(overlay)/Banner.md)
