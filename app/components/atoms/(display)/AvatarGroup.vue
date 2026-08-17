@@ -43,7 +43,7 @@ const shownSized = computed(() =>
 </script>
 
 <template>
-    <div class="avatar-group">
+    <div class="avatar-group" :data-size="size">
         <Vnode v-for="(node, i) in shownSized" :key="i" :node="node" />
         <span v-if="overflow > 0" class="more" :data-size="size">+{{ overflow }}</span>
     </div>
@@ -59,6 +59,17 @@ const shownSized = computed(() =>
         box-shadow: 0 0 0 2px var(--color-bg)
     & > * + *
         margin-left: -0.5em
+
+    &[data-size="xs"] > * + *
+        margin-left: -0.5rem
+    &[data-size="sm"] > * + *
+        margin-left: -0.75rem
+    &[data-size="md"] > * + *
+        margin-left: -1rem
+    &[data-size="lg"] > * + *
+        margin-left: -1.25rem
+    &[data-size="xl"] > * + *
+        margin-left: -1.5rem
 
     .more
         display: inline-flex

@@ -13,6 +13,7 @@ Per-component documentation, mirroring `app/components/atoms/<category>/`.
 ### `(control)`
 - [Button](./atoms/(control)/Button.md)
 - [Progress](./atoms/(control)/Progress.md)
+- [Switch](./atoms/(control)/Switch.md)
 
 ### `(overlay)`
 - [Banner](./atoms/(overlay)/Banner.md)

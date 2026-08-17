@@ -173,13 +173,37 @@
                     <Progress :value="60" size="lg" variant="success" />
                 </Stack>
             </section>
+
+            <section class="group">
+                <h2 class="group__title">Switch</h2>
+                <Stack direction="row" gap="md" align="center">
+                    <Switch v-model="switches.info" variant="info" label="Info" />
+                    <Switch v-model="switches.success" variant="success" label="Success" />
+                    <Switch v-model="switches.warning" variant="warning" label="Warning" />
+                    <Switch v-model="switches.error" variant="error" label="Error" />
+                    <Switch v-model="switches.sm" size="sm" variant="info" label="Small" />
+                    <Switch v-model="switches.lg" size="lg" variant="info" label="Large" />
+                    <Switch :model-value="true" disabled variant="info" label="Disabled" />
+                </Stack>
+            </section>
         </div>
         <div style="height: 50vh"></div>
     </App>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
+
 const log = (...args: unknown[]) => console.log("dismiss", ...args);
+
+const switches = ref({
+    info: true,
+    success: false,
+    warning: true,
+    error: true,
+    sm: true,
+    lg: true,
+});
 </script>
 
 <style scoped lang="sass">

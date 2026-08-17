@@ -91,20 +91,17 @@ defineEmits<{
         padding: 0
         border: none
         border-radius: var(--radius-sm)
-        background: transparent
+        background: color-mix(in srgb, currentColor 12%, transparent)
         color: inherit
         font-size: 1.25rem
         line-height: 1
         cursor: pointer
-        opacity: 0.7
-        transition: background-color 0.15s ease, opacity 0.15s ease
+        transition: background-color 0.15s ease
         &:hover
-            opacity: 1
-            background: rgba(127, 127, 127, 0.18)
+            background: color-mix(in srgb, currentColor 22%, transparent)
         &:focus-visible
             outline: 2px solid currentColor
             outline-offset: 2px
-            opacity: 1
         svg
             width: 1em
             height: 1em

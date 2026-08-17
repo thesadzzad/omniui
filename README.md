@@ -75,7 +75,7 @@ bun install          # or: npm install / pnpm install / yarn install
 Per-component reference, organized by category (mirrors `app/components/atoms/<category>/`):
 
 - **atoms / (display)** — [Alert](./doc/atoms/(display)/Alert.md), [Avatar](./doc/atoms/(display)/Avatar.md), [AvatarGroup](./doc/atoms/(display)/AvatarGroup.md), [Badge](./doc/atoms/(display)/Badge.md)
-- **atoms / (control)** — [Button](./doc/atoms/(control)/Button.md), [Progress](./doc/atoms/(control)/Progress.md)
+- **atoms / (control)** — [Button](./doc/atoms/(control)/Button.md), [Progress](./doc/atoms/(control)/Progress.md), [Switch](./doc/atoms/(control)/Switch.md)
 - **atoms / (overlay)** — [Banner](./doc/atoms/(overlay)/Banner.md)
 
 Full index and conventions: **[doc/README.md](./doc/README.md)**.
