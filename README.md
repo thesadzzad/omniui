@@ -58,7 +58,7 @@ bun install          # or: npm install / pnpm install / yarn install
     | Radius | `--radius-{sm,md,lg,pill,none}` |
     | Spacing | `--space-{xs,sm,md,lg,xl}` |
 
-    `variant` props accept `neutral \| info \| success \| warning \| error` and pull the matching `-fg`/`-bg` pair. Override globally to re-skin the whole library:
+    `variant` props accept `neutral | info | success | warning | error` and pull the matching `-fg`/`-bg` pair. Override globally to re-skin the whole library:
 
     ```css
     :root {
