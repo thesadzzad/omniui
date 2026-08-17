@@ -12,12 +12,7 @@
                     This is a neutral alert message.
                 </Alert>
 
-                <Alert
-                    variant="info"
-                    title="Info"
-                    dismissible
-                    @dismiss="log"
-                >
+                <Alert variant="info" title="Info" dismissible @dismiss="log">
                     Heads up, here's some helpful information.
                 </Alert>
 
@@ -49,13 +44,35 @@
             </section>
 
             <section class="group">
+                <h2 class="group__title">Banner</h2>
+                <Banner variant="error" :duration="5000">
+                    Something went wrong, try again.
+                </Banner>
+                <Banner
+                    variant="info"
+                    dismissible
+                    :duration="4000"
+                    @dismiss="log"
+                >
+                    A new version is available.
+                </Banner>
+                <Banner variant="success" :duration="3000">
+                    Your changes were saved successfully.
+                </Banner>
+                <Banner
+                    variant="warning"
+                    dismissible
+                    :duration="2000"
+                    @dismiss="log"
+                >
+                    Please review before continuing.
+                </Banner>
+            </section>
+
+            <section class="group">
                 <h2 class="group__title">Avatar</h2>
                 <div class="avatars">
-                    <Avatar
-                        name="Ada Lovelace"
-                        size="xs"
-                        status="online"
-                    />
+                    <Avatar name="Ada Lovelace" size="xs" status="online" />
                     <Avatar name="Alan Turing" size="sm" status="busy" />
                     <Avatar name="Grace Hopper" size="md" status="away" />
                     <Avatar
@@ -70,12 +87,7 @@
                         shape="square"
                         status="online"
                     />
-                    <Avatar
-                        name="Ring On"
-                        size="md"
-                        ring
-                        status="online"
-                    />
+                    <Avatar name="Ring On" size="md" ring status="online" />
                     <Avatar
                         src="https://i.pravatar.cc/100?img=33"
                         size="lg"
@@ -117,6 +129,49 @@
                     <Badge variant="info" size="sm">Small</Badge>
                     <Badge variant="error" size="lg">Large</Badge>
                 </div>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Button</h2>
+                <Stack direction="row" gap="sm" align="center">
+                    <Button variant="neutral">Neutral</Button>
+                    <Button variant="info">Info</Button>
+                    <Button variant="success">Success</Button>
+                    <Button variant="warning">Warning</Button>
+                    <Button variant="error">Error</Button>
+                </Stack>
+                <Stack direction="row" gap="sm" align="center">
+                    <Button size="sm">Small</Button>
+                    <Button size="md">Medium</Button>
+                    <Button size="lg">Large</Button>
+                    <Button disabled>Disabled</Button>
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Stack</h2>
+                <Stack direction="col" gap="sm">
+                    <Button variant="info">Row 1</Button>
+                    <Button variant="success">Row 2</Button>
+                    <Button variant="warning">Row 3</Button>
+                </Stack>
+                <Stack direction="row" gap="md" align="center" justify="between">
+                    <Button variant="neutral">Left</Button>
+                    <Button variant="neutral">Center</Button>
+                    <Button variant="neutral">Right</Button>
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Progress</h2>
+                <Stack direction="col" gap="sm">
+                    <Progress :value="25" variant="info" />
+                    <Progress :value="50" variant="success" />
+                    <Progress :value="75" variant="warning" />
+                    <Progress :value="100" variant="error" />
+                    <Progress indeterminate variant="info" />
+                    <Progress :value="60" size="lg" variant="success" />
+                </Stack>
             </section>
         </div>
         <div style="height: 50vh"></div>
