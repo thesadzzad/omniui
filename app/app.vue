@@ -3,98 +3,87 @@
         <div class="preview">
             <section class="group">
                 <h2 class="group__title">Alert</h2>
-                <AtomsAlert
+                <Alert
                     variant="neutral"
                     title="Neutral"
                     dismissible
                     @dismiss="log"
                 >
                     This is a neutral alert message.
-                </AtomsAlert>
+                </Alert>
 
-                <AtomsAlert
+                <Alert
                     variant="info"
                     title="Info"
                     dismissible
                     @dismiss="log"
                 >
                     Heads up, here's some helpful information.
-                </AtomsAlert>
+                </Alert>
 
-                <AtomsAlert
+                <Alert
                     variant="success"
                     title="Success"
                     dismissible
                     @dismiss="log"
                 >
                     Your changes were saved successfully.
-                </AtomsAlert>
+                </Alert>
 
-                <AtomsAlert
+                <Alert
                     variant="warning"
                     title="Warning"
                     dismissible
                     @dismiss="log"
                 >
                     Please review before continuing.
-                </AtomsAlert>
+                </Alert>
 
-                <AtomsAlert variant="error" title="Error" @dismiss="log">
+                <Alert variant="error" title="Error" @dismiss="log">
                     Something went wrong, try again.
-                </AtomsAlert>
+                </Alert>
 
-                <AtomsAlert variant="success" title="No dismiss">
+                <Alert variant="success" title="No dismiss">
                     This alert has no dismiss button.
-                </AtomsAlert>
+                </Alert>
             </section>
 
             <section class="group">
                 <h2 class="group__title">Avatar</h2>
                 <div class="avatars">
-                    <AtomsAvatar
+                    <Avatar
                         name="Ada Lovelace"
                         size="xs"
                         status="online"
                     />
-                    <AtomsAvatar
-                        name="Alan Turing"
-                        size="sm"
-                        status="busy"
-                    />
-                    <AtomsAvatar
-                        name="Grace Hopper"
-                        size="md"
-                        status="away"
-                    />
-                    <AtomsAvatar
+                    <Avatar name="Alan Turing" size="sm" status="busy" />
+                    <Avatar name="Grace Hopper" size="md" status="away" />
+                    <Avatar
                         name="Katherine Johnson"
                         size="lg"
                         status="offline"
                     />
-                    <AtomsAvatar
-                        name="Linus Torvalds"
-                        size="xl"
-                    />
-                    <AtomsAvatar
+                    <Avatar name="Linus Torvalds" size="xl" />
+                    <Avatar
                         src="https://i.pravatar.cc/100?img=12"
                         size="lg"
                         shape="square"
                         status="online"
                     />
-                    <AtomsAvatar
+                    <Avatar
                         name="Ring On"
                         size="md"
                         ring
                         status="online"
                     />
-                    <AtomsAvatar
+                    <Avatar
                         src="https://i.pravatar.cc/100?img=33"
                         size="lg"
                         shape="circle"
                         ring
                         status="busy"
                     />
-                    <AtomsAvatar
+                    <Avatar
                         name="Squircle Ring"
                         size="xl"
                         shape="squircle"
@@ -102,7 +91,35 @@
                     />
                 </div>
             </section>
+
+            <section class="group">
+                <h2 class="group__title">Avatar Group</h2>
+                <AvatarGroup :max="4" size="lg">
+                    <Avatar name="Ada Lovelace" />
+                    <Avatar name="Alan Turing" />
+                    <Avatar name="Grace Hopper" />
+                    <Avatar name="Katherine Johnson" />
+                    <Avatar src="https://i.pravatar.cc/100?img=12" />
+                    <Avatar name="Linus Torvalds" />
+                    <Avatar name="Margaret Hamilton" />
+                </AvatarGroup>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Badge</h2>
+                <div class="badges">
+                    <Badge variant="neutral">Neutral</Badge>
+                    <Badge variant="info">Info</Badge>
+                    <Badge variant="success">Success</Badge>
+                    <Badge variant="warning">Warning</Badge>
+                    <Badge variant="error">Error</Badge>
+                    <Badge variant="success" dot>Active</Badge>
+                    <Badge variant="info" size="sm">Small</Badge>
+                    <Badge variant="error" size="lg">Large</Badge>
+                </div>
+            </section>
         </div>
+        <div style="height: 50vh"></div>
     </App>
 </template>
 
@@ -137,4 +154,10 @@ const log = (...args: unknown[]) => console.log("dismiss", ...args);
         align-items: center
         flex-wrap: wrap
         gap: var(--space-md)
+
+    .badges
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        gap: var(--space-sm)
 </style>
