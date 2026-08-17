@@ -131,9 +131,9 @@ const initials = computed(() => {
     /* Status dot */
     .status
         position: absolute
-        right: 0
-        bottom: 0
-        transform: translate(25%, 25%)
+        right: 6%
+        bottom: 6%
+        transform: none
         width: 28%
         height: 28%
         min-width: 0.625rem
@@ -143,9 +143,8 @@ const initials = computed(() => {
         box-sizing: border-box
 
     &[data-type="circle"] .status
-        right: 5%
-        bottom: 5%
-        transform: none
+        right: 6%
+        bottom: 6%
 
     .status[data-status="online"]
         background: var(--color-success-fg)
