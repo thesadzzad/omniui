@@ -22,6 +22,28 @@ Per-component documentation, mirroring `app/components/atoms/<category>/`.
 ### `(layout)`
 - [Stack](./atoms/(layout)/Stack.md)
 - [Separator](./atoms/(layout)/Separator.md)
+- [Accordion](./atoms/(layout)/Accordion.md)
+- [AccordionItem](./atoms/(layout)/AccordionItem.md)
+
+### `(input)`
+- [Input](./atoms/(input)/Input.md)
+- [EmailInput](./atoms/(input)/EmailInput.md)
+- [PasswordInput](./atoms/(input)/PasswordInput.md)
+- [TelInput](./atoms/(input)/TelInput.md)
+
+### `(typography)`
+- [Heading](./atoms/(typography)/Heading.md)
+- [Text](./atoms/(typography)/Text.md)
+- [Label](./atoms/(typography)/Label.md)
+- [Caption](./atoms/(typography)/Caption.md)
+- [Blockquote](./atoms/(typography)/Blockquote.md)
+
+### `(navigation)`
+- [Anchor](./atoms/(navigation)/Anchor.md)
+- [Breadcrumb](./atoms/(navigation)/Breadcrumb.md)
+- [NavigationMenu](./atoms/(navigation)/NavigationMenu.md)
+- [Pagination](./atoms/(navigation)/Pagination.md)
+- [Tabs](./atoms/(navigation)/Tabs.md)
 
 ### `(overlay)`
 - [Banner](./atoms/(overlay)/Banner.md)

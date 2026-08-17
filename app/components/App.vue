@@ -5,13 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount } from "vue";
 import "@fontsource/jetbrains-mono";
-
-onBeforeMount(() => {
-    const theme = localStorage.getItem("data-theme") || "dark";
-    document.documentElement.setAttribute("data-theme", theme);
-});
 </script>
 
 <style scoped>

@@ -11,8 +11,6 @@ const props = withDefaults(
     { size: "md" },
 );
 
-const Vnode = (p: { node: unknown }) => p.node as never;
-
 const slots = useSlots();
 
 const children = computed(() => {
@@ -44,7 +42,7 @@ const shownSized = computed(() =>
 
 <template>
     <div class="avatar-group" :data-size="size">
-        <Vnode v-for="(node, i) in shownSized" :key="i" :node="node" />
+        <component v-for="(node, i) in shownSized" :key="i" :is="node" />
         <span v-if="overflow > 0" class="more" :data-size="size">+{{ overflow }}</span>
     </div>
 </template>

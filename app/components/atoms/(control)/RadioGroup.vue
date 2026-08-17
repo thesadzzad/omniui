@@ -35,7 +35,7 @@ const emit = defineEmits<{
         <Radio
             v-for="opt in options"
             :key="String(opt.value)"
-            v-model="props.modelValue"
+            :model-value="props.modelValue"
             :value="opt.value"
             :name="name"
             :variant="opt.variant"

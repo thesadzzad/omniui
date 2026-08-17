@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { PhCheck, PhMinus } from "@phosphor-icons/vue";
-
 type Variant = "neutral" | "info" | "success" | "warning" | "error";
 type Size = "sm" | "md" | "lg";
 
@@ -49,14 +47,27 @@ function toggle() {
             @change="toggle"
         />
         <span class="box" aria-hidden="true">
-            <Transition name="check-pop">
-                <component
-                    :is="indeterminate ? PhMinus : PhCheck"
-                    v-if="indeterminate || modelValue"
-                    class="check"
-                    weight="bold"
+            <svg
+                class="check"
+                viewBox="0 0 24 24"
+                fill="none"
+            >
+                <path
+                    class="tick"
+                    d="M5 12.5l4.5 4.5L19 7.5"
+                    stroke="currentColor"
+                    stroke-width="3.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                 />
-            </Transition>
+                <path
+                    class="dash"
+                    d="M6 12h12"
+                    stroke="currentColor"
+                    stroke-width="3.5"
+                    stroke-linecap="round"
+                />
+            </svg>
         </span>
         <span v-if="label" class="label">{{ label }}</span>
     </label>
@@ -102,24 +113,29 @@ function toggle() {
         display: block
         color: var(--color-bg)
 
-    .check-pop-enter-active,
-    .check-pop-leave-active
-        transition: transform 0.35s ease, opacity 0.35s ease
-
-    .check-pop-enter-from,
-    .check-pop-leave-to
-        transform: scale(0.4)
-        opacity: 0
+        .tick,
+        .dash
+            stroke-dasharray: 28
+            stroke-dashoffset: 28
+            transition: stroke-dashoffset 0.35s ease
 
     &[data-checked]
         .box
             border-color: currentColor
             background: currentColor
 
+            .tick
+                stroke-dashoffset: 0
+
     &[data-indeterminate]
         .box
             border-color: currentColor
             background: currentColor
+
+            .tick
+                stroke-dashoffset: 28
+            .dash
+                stroke-dashoffset: 0
 
     &:focus-within:focus-visible
         outline: 2px solid currentColor

@@ -271,6 +271,132 @@
                     ]"
                 />
             </section>
+
+            <section class="group">
+                <h2 class="group__title">Input</h2>
+                <Stack direction="col" gap="sm" align="stretch">
+                    <Input v-model="text" label="Name" placeholder="Enter your name" />
+                    <Input v-model="text" placeholder="Default" />
+                    <Input v-model="text" placeholder="Another" />
+                    <Input :model-value="''" disabled placeholder="Disabled" />
+                    <Input v-model="text" size="lg" placeholder="Large" />
+                    <Input
+                        v-model="text"
+                        placeholder="Search users"
+                        :icon-left="PhUser"
+                        :icon-right="PhMagnifyingGlass"
+                    />
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">EmailInput</h2>
+                <Stack direction="col" gap="sm" align="stretch">
+                    <EmailInput v-model="email" label="Email" />
+                    <EmailInput v-model="email" placeholder="you@domain.com" />
+                    <EmailInput :model-value="''" disabled />
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">PasswordInput</h2>
+                <Stack direction="col" gap="sm" align="stretch">
+                    <PasswordInput v-model="password" label="Password" />
+                    <PasswordInput v-model="password" />
+                    <PasswordInput :model-value="''" disabled />
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">TelInput</h2>
+                <Stack direction="col" gap="sm" align="stretch">
+                    <TelInput v-model="tel" label="Phone" />
+                    <TelInput v-model="tel" />
+                    <TelInput :model-value="''" disabled />
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Accordion</h2>
+                <Accordion>
+                    <AccordionItem :index="0" title="What is OmniUI?">
+                        A small Vue 3 + Nuxt 4 component library with scoped Sass atoms.
+                    </AccordionItem>
+                    <AccordionItem :index="1" title="How do I install it?">
+                        Run <code>bun add</code> and import the components you need.
+                    </AccordionItem>
+                    <AccordionItem :index="2" title="Is it themeable?">
+                        Yes — tokens are CSS variables under <code>[data-theme]</code>.
+                    </AccordionItem>
+                </Accordion>
+                <Accordion multiple>
+                    <AccordionItem :index="0" title="Multiple allowed">
+                        This accordion lets several panels stay open at once.
+                    </AccordionItem>
+                    <AccordionItem :index="1" title="Second panel">
+                        Toggle me independently of the first.
+                    </AccordionItem>
+                </Accordion>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Typography</h2>
+                <Stack direction="col" gap="sm" align="stretch">
+                    <Heading :level="1">Heading 1</Heading>
+                    <Heading :level="2">Heading 2</Heading>
+                    <Heading :level="3">Heading 3</Heading>
+                    <Heading :level="4">Heading 4</Heading>
+                    <Heading :level="5">Heading 5</Heading>
+                    <Heading :level="6">Heading 6</Heading>
+                    <Text>
+                        Body text — the default paragraph style used for running
+                        copy and explanations throughout the UI.
+                    </Text>
+                    <Label>Label</Label>
+                    <Label muted>Muted label</Label>
+                    <Caption>Caption — secondary, smaller muted text.</Caption>
+                    <Blockquote cite="Ada Lovelace">
+                        That brain of mine is something more than merely mortal.
+                    </Blockquote>
+                </Stack>
+            </section>
+
+            <section class="group">
+                <h2 class="group__title">Navigation</h2>
+                <Stack direction="col" gap="md" align="stretch">
+                    <Breadcrumb
+                        :items="[
+                            { label: 'Home', to: '#' },
+                            { label: 'Library', to: '#' },
+                            { label: 'Components' },
+                        ]"
+                    />
+                    <NavigationMenu
+                        :items="[
+                            { label: 'Overview', to: '#', active: true },
+                            { label: 'Guides', to: '#' },
+                            { label: 'API', to: '#', disabled: true },
+                        ]"
+                    />
+                    <NavigationMenu
+                        orientation="horizontal"
+                        :items="[
+                            { label: 'Day', active: true },
+                            { label: 'Week' },
+                            { label: 'Month' },
+                        ]"
+                    />
+                    <Pagination v-model="page" :total="20" />
+                    <Pagination v-model="pageSmall" :total="5" />
+                    <Tabs :tabs="tabList">
+                        <template #default="{ active }">
+                            <div v-if="active === 'a'">First panel content.</div>
+                            <div v-else-if="active === 'b'">Second panel content.</div>
+                            <div v-else>Third panel content.</div>
+                        </template>
+                    </Tabs>
+                </Stack>
+            </section>
         </div>
         <div style="height: 50vh"></div>
     </App>
@@ -278,6 +404,11 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { PhUser, PhMagnifyingGlass } from "@phosphor-icons/vue";
+import Breadcrumb from "./components/atoms/(navigation)/Breadcrumb.vue";
+import NavigationMenu from "./components/atoms/(navigation)/NavigationMenu.vue";
+import Pagination from "./components/atoms/(navigation)/Pagination.vue";
+import Tabs from "./components/atoms/(navigation)/Tabs.vue";
 
 const log = (...args: unknown[]) => console.log("dismiss", ...args);
 
@@ -294,6 +425,17 @@ const radio = ref("a");
 const radioGroup = ref("x");
 const checked = ref(true);
 const tags = ref(["a", "c"]);
+const text = ref("");
+const email = ref("");
+const password = ref("");
+const tel = ref("");
+const page = ref(1);
+const pageSmall = ref(1);
+const tabList = [
+    { id: "a", label: "First" },
+    { id: "b", label: "Second" },
+    { id: "c", label: "Third" },
+];
 </script>
 
 <style scoped lang="sass">
