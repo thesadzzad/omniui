@@ -95,7 +95,10 @@ app/
   components/
     App.vue               token definitions ([data-theme])
     atoms/
-      (display)/           Avatar, AvatarGroup, Badge, Alert
+      (display)/           Avatar, AvatarGroup, Badge
+      (control)/           Button, Progress
+      (overlay)/           Alert, Banner
+      (layout)/            Stack
       (control)/           Button, Progress
       (overlay)/           Banner
       (typography)/        (reserved)
