@@ -8,7 +8,7 @@ const props = withDefaults(
         variant?: Variant;
         size?: Size;
         disabled?: boolean;
-        label?: string;
+        label: string;
     }>(),
     { modelValue: false, variant: "info", size: "md", disabled: false },
 );
