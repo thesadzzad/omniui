@@ -8,30 +8,7 @@ A small, themeable **Vue 3 + Nuxt 4** component library styled with scoped inden
 <Button variant="info" size="lg">Continue</Button>
 ```
 
-## Features
-
-- **Zero-config imports** — `pathPrefix: false` means `<Avatar>`, `<Banner>`, `<Button>` resolve by filename regardless of folder.
-- **Token-driven theming** — every variant maps to CSS custom properties; re-skin by overriding tokens, not components.
-- **Scoped indented Sass** — BEM `__` prefixes dropped; `<style scoped>` already isolates.
-- **Accessible primitives** — `role`/`aria` on progress and banners, keyboard-focusable controls.
-
-## Install
-
-```bash
-bun install          # or: npm install / pnpm install / yarn install
-```
-
-> This repo is the library + a live preview app (`app/`). To use the components in your own Nuxt app, copy `app/components/atoms` into your project's `components/` directory (or publish as a package — see *Publishing* below).
-
-## Quick Start (in this repo)
-
-```bash
-bun run dev          # preview gallery at http://localhost:3000
-```
-
-`app/app.vue` renders every component and variant so you can eyeball them all.
-
-## Using Components
+## Get Started
 
 No import statements needed — Nuxt auto-imports every `.vue` under `components/`:
 
@@ -55,42 +32,53 @@ const onDismiss = () => console.log("dismissed");
 </template>
 ```
 
-## Component Index
+Run the live preview gallery to see every component and variant:
 
-| Component | Folder | Highlights |
-|-----------|--------|------------|
-| `Alert` | `(display)` | variant, title, dismissible |
-| `Avatar` | `(display)` | image/initials, shape, status, ring |
-| `AvatarGroup` | `(display)` | overlap, `+N` overflow, size inheritance |
-| `Badge` | `(display)` | variant, size, dot |
-| `Button` | `(control)` | variant, size, disabled |
-| `Progress` | `(control)` | value, indeterminate, size |
-| `Banner` | `(overlay)` | fixed top, centered, auto-dismiss, slide-up |
-
-Full prop/event/slot reference: **[`doc/`](./doc)**.
-
-## Theming
-
-Colors, radii, and spacing are CSS custom properties defined in `app/components/App.vue` under `[data-theme="dark"]`. Override them globally to re-skin the whole library:
-
-```css
-:root {
-    --color-bg: #0f0f0f;
-    --color-fg: #fafafa;
-    --color-info-fg: #8ab4ff;
-    --color-info-bg: #1a2233;
-    /* … */
-}
+```bash
+bun run dev          # http://localhost:3000 — app/app.vue renders all atoms
 ```
 
-| Group | Tokens |
-|-------|--------|
-| Base | `--color-bg`, `--color-fg`, `--color-muted-fg/bg`, `--color-accent-fg/bg`, `--color-border` |
-| Status | `--color-{neutral,info,success,warning,error}-fg/bg` |
-| Radius | `--radius-{sm,md,lg,pill,none}` |
-| Spacing | `--space-{xs,sm,md,lg,xl}` |
+## Install
 
-`variant` props accept `neutral \| info \| success \| warning \| error` and pull the matching `-fg`/`-bg` pair.
+```bash
+bun install          # or: npm install / pnpm install / yarn install
+```
+
+> This repo is the library + a live preview app (`app/`). To use the components in your own Nuxt app, copy `app/components/atoms` into your project's `components/` directory (or publish as a package — see *Publishing* in the [docs](./doc)).
+
+## Usage
+
+- **Zero-config imports** — `pathPrefix: false` means `<Avatar>`, `<Banner>`, `<Button>` resolve by filename regardless of folder.
+- **Token-driven theming** — every variant maps to CSS custom properties; re-skin by overriding tokens, not components. Colors, radii, and spacing live in `app/components/App.vue` under `[data-theme="dark"]`:
+
+    | Group | Tokens |
+    |-------|--------|
+    | Base | `--color-bg`, `--color-fg`, `--color-muted-fg/bg`, `--color-accent-fg/bg`, `--color-border` |
+    | Status | `--color-{neutral,info,success,warning,error}-fg/bg` |
+    | Radius | `--radius-{sm,md,lg,pill,none}` |
+    | Spacing | `--space-{xs,sm,md,lg,xl}` |
+
+    `variant` props accept `neutral \| info \| success \| warning \| error` and pull the matching `-fg`/`-bg` pair. Override globally to re-skin the whole library:
+
+    ```css
+    :root {
+        --color-info-fg: #8ab4ff;
+        --color-info-bg: #1a2233;
+    }
+    ```
+
+- **Scoped indented Sass** — BEM `__` prefixes dropped; `<style scoped>` already isolates.
+- **Accessible primitives** — `role`/`aria` on progress and banners, keyboard-focusable controls.
+
+## Doc
+
+Per-component reference, organized by category (mirrors `app/components/atoms/<category>/`):
+
+- **atoms / (display)** — [Alert](./doc/atoms/(display)/Alert.md), [Avatar](./doc/atoms/(display)/Avatar.md), [AvatarGroup](./doc/atoms/(display)/AvatarGroup.md), [Badge](./doc/atoms/(display)/Badge.md)
+- **atoms / (control)** — [Button](./doc/atoms/(control)/Button.md), [Progress](./doc/atoms/(control)/Progress.md)
+- **atoms / (overlay)** — [Banner](./doc/atoms/(overlay)/Banner.md)
+
+Full index and conventions: **[doc/README.md](./doc/README.md)**.
 
 ## Build
 
