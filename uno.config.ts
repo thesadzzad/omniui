@@ -20,7 +20,7 @@ export default defineConfig({
 			}
 		}),
 		presetTypography(),
-		presetWebFonts()
+		presetWebFonts({ fonts: { sans: 'Inter' } })
 	],
 	transformers: [
 		transformerVariantGroup(),

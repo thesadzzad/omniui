@@ -5,7 +5,7 @@ OmniUI is a Svelte 5 component library. Components live in `src/lib`; routes onl
 ## Styling
 
 - UnoCSS Wind4 utilities are the styling primitive.
-- Typography and web-font presets are available through UnoCSS. Add named font aliases in `uno.config.ts` only when the design selects a font family.
+- Typography and web-font presets are available through UnoCSS. `font-sans` uses Inter.
 - Variant groups and `@apply`, `@screen`, and `theme()` directives are enabled.
 - Compile repeated utility groups with `:uno:`. Generated classes use the `omni-` prefix.
 
