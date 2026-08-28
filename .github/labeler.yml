@@ -1,0 +1,23 @@
+components:
+  - changed-files:
+      - any-glob-to-any-file: src/lib/**
+
+showcase:
+  - changed-files:
+      - any-glob-to-any-file: src/routes/**
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: '**/*.md'
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - package.json
+          - bun.lock
+
+github-actions:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/workflows/**
+          - .github/labeler.yml
